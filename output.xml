@@ -1,34 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2026-03-09T00:07:33.007271" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2026-03-09T00:17:25.363647" rpa="false" schemaversion="5">
 <suite id="s1" name="Ui" source="C:\Users\Jackie\robot-framework-exam\tests\ui">
 <suite id="s1-s1" name="Landing" source="C:\Users\Jackie\robot-framework-exam\tests\ui\landing.robot">
-<test id="s1-s1-t1" name="Open Website" line="9">
+<test id="s1-s1-t1" name="Open Website" line="5">
+<kw name="Open Website" owner="ui_keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-03-09T00:07:33.499541" level="INFO">Opening browser 'chrome' to base url 'https://kiwamitestcloud.com/'.</msg>
+<msg time="2026-03-09T00:17:25.907159" level="INFO">Opening browser 'chrome' to base url 'https://kiwamitestcloud.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-03-09T00:07:33.499064" elapsed="3.277168"/>
+<status status="PASS" start="2026-03-09T00:17:25.904905" elapsed="3.289263"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-03-09T00:07:36.777439" elapsed="0.172501"/>
+<status status="PASS" start="2026-03-09T00:17:29.195120" elapsed="0.062870"/>
+</kw>
+<status status="PASS" start="2026-03-09T00:17:25.899673" elapsed="3.358837"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T00:07:41.962126" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-03-09T00:17:34.265217" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T00:07:36.955414" elapsed="5.007143"/>
+<status status="PASS" start="2026-03-09T00:17:29.263589" elapsed="5.001892"/>
 </kw>
+<kw name="Close Website" owner="ui_keywords">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-03-09T00:07:41.963691" elapsed="2.329062"/>
+<status status="PASS" start="2026-03-09T00:17:34.268055" elapsed="2.425242"/>
 </kw>
-<status status="PASS" start="2026-03-09T00:07:33.497334" elapsed="10.796944"/>
+<status status="PASS" start="2026-03-09T00:17:34.266822" elapsed="2.426922"/>
+</kw>
+<status status="PASS" start="2026-03-09T00:17:25.896864" elapsed="10.798092"/>
 </test>
-<status status="PASS" start="2026-03-09T00:07:33.072656" elapsed="11.226004"/>
+<status status="PASS" start="2026-03-09T00:17:25.421276" elapsed="11.276725"/>
 </suite>
-<status status="PASS" start="2026-03-09T00:07:33.010943" elapsed="11.292356"/>
+<status status="PASS" start="2026-03-09T00:17:25.366830" elapsed="11.335044"/>
 </suite>
 <statistics>
 <total>

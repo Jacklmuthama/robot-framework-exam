@@ -1,13 +1,8 @@
 *** Settings ***
-Library    SeleniumLibrary
-
-*** Variables ***
-${URL}       https://kiwamitestcloud.com/
-${BROWSER}   chrome
+Resource    ../../resources/keywords/ui_keywords.robot
 
 *** Test Cases ***
 Open Website
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
+    Open Website
     Sleep    5
-    Close Browser
+    Close Website
