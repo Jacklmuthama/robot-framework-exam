@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2026-03-09T00:07:33.007271" rpa="false" schemaversion="5">
+<suite id="s1" name="Ui" source="C:\Users\Jackie\robot-framework-exam\tests\ui">
+<suite id="s1-s1" name="Landing" source="C:\Users\Jackie\robot-framework-exam\tests\ui\landing.robot">
+<test id="s1-s1-t1" name="Open Website" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-03-09T00:07:33.499541" level="INFO">Opening browser 'chrome' to base url 'https://kiwamitestcloud.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-03-09T00:07:33.499064" elapsed="3.277168"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-03-09T00:07:36.777439" elapsed="0.172501"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T00:07:41.962126" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T00:07:36.955414" elapsed="5.007143"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-03-09T00:07:41.963691" elapsed="2.329062"/>
+</kw>
+<status status="PASS" start="2026-03-09T00:07:33.497334" elapsed="10.796944"/>
+</test>
+<status status="PASS" start="2026-03-09T00:07:33.072656" elapsed="11.226004"/>
+</suite>
+<status status="PASS" start="2026-03-09T00:07:33.010943" elapsed="11.292356"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Ui" id="s1" pass="1" fail="0" skip="0">Ui</stat>
+<stat name="Landing" id="s1-s1" pass="1" fail="0" skip="0">Ui.Landing</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
