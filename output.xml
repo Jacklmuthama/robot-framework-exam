@@ -1,50 +1,362 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2026-03-09T00:17:25.363647" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2026-03-09T01:04:04.182290" rpa="false" schemaversion="5">
 <suite id="s1" name="Ui" source="C:\Users\Jackie\robot-framework-exam\tests\ui">
 <suite id="s1-s1" name="Landing" source="C:\Users\Jackie\robot-framework-exam\tests\ui\landing.robot">
-<test id="s1-s1-t1" name="Open Website" line="5">
-<kw name="Open Website" owner="ui_keywords">
+<kw name="Open Website" owner="ui_keywords" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-03-09T00:17:25.907159" level="INFO">Opening browser 'chrome' to base url 'https://kiwamitestcloud.com/'.</msg>
+<msg time="2026-03-09T01:04:04.871859" level="INFO">Opening browser 'chrome' to base url 'https://kiwamitestcloud.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-03-09T00:17:25.904905" elapsed="3.289263"/>
+<status status="PASS" start="2026-03-09T01:04:04.871209" elapsed="3.155253"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-03-09T00:17:29.195120" elapsed="0.062870"/>
-</kw>
-<status status="PASS" start="2026-03-09T00:17:25.899673" elapsed="3.358837"/>
+<status status="PASS" start="2026-03-09T01:04:08.027550" elapsed="0.049772"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T00:17:34.265217" level="INFO">Slept 5 seconds.</msg>
+<msg time="2026-03-09T01:04:13.078937" level="INFO">Slept 5 seconds.</msg>
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T00:17:29.263589" elapsed="5.001892"/>
+<status status="PASS" start="2026-03-09T01:04:08.078077" elapsed="5.001289"/>
 </kw>
-<kw name="Close Website" owner="ui_keywords">
+<status status="PASS" start="2026-03-09T01:04:04.869669" elapsed="8.210169"/>
+</kw>
+<test id="s1-s1-t1" name="Verify Logo Visible" line="7">
+<kw name="Verify Logo Visible" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.168763" level="INFO">Current page contains element 'xpath=//img'.</msg>
+<arg>${LOGO}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.085294" elapsed="0.084026"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.083867" elapsed="0.086186"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.080247" elapsed="0.091212"/>
+</test>
+<test id="s1-s1-t2" name="Verify Products Menu Visible" line="10">
+<kw name="Verify Products Menu" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.244241" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Products')]'.</msg>
+<arg>${PRODUCTS_MENU}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.177605" elapsed="0.067199"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.176410" elapsed="0.069121"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.173733" elapsed="0.075062"/>
+</test>
+<test id="s1-s1-t3" name="Verify Solutions Menu Visible" line="13">
+<kw name="Verify Solutions Menu" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.328091" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Solutions')]'.</msg>
+<arg>${SOLUTIONS_MENU}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.259017" elapsed="0.069512"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.256929" elapsed="0.072021"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.252642" elapsed="0.077790"/>
+</test>
+<test id="s1-s1-t4" name="Verify Why Us Menu Visible" line="16">
+<kw name="Verify WhyUs Menu" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.383755" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Why')]'.</msg>
+<arg>${WHYUS_MENU}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.339952" elapsed="0.044020"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.337447" elapsed="0.046788"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.334291" elapsed="0.050744"/>
+</test>
+<test id="s1-s1-t5" name="Verify Platform Menu Visible" line="19">
+<kw name="Verify Platform Menu" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.445565" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Platform')]'.</msg>
+<arg>${PLATFORM_MENU}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.394207" elapsed="0.051557"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.392901" elapsed="0.053083"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.389086" elapsed="0.057570"/>
+</test>
+<test id="s1-s1-t6" name="Verify Contact Menu Visible" line="22">
+<kw name="Verify Contact Menu" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.481355" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Contact')]'.</msg>
+<arg>${CONTACT_MENU}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.449643" elapsed="0.032035"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.449073" elapsed="0.032929"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.447957" elapsed="0.034822"/>
+</test>
+<test id="s1-s1-t7" name="Verify Sign In Button Visible" line="25">
+<kw name="Verify SignIn Button" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.518524" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Sign')]'.</msg>
+<arg>${SIGNIN_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.486190" elapsed="0.032538"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.485372" elapsed="0.033580"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.484318" elapsed="0.035324"/>
+</test>
+<test id="s1-s1-t8" name="Verify Get Started Button Visible" line="28">
+<kw name="Verify Get Started Button" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.560214" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Get Started')]'.</msg>
+<arg>${GET_STARTED}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.526487" elapsed="0.033931"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.525829" elapsed="0.034844"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.523986" elapsed="0.037369"/>
+</test>
+<test id="s1-s1-t9" name="Verify Launch Button Visible" line="31">
+<kw name="Verify Launch Button" owner="ui_keywords">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.597898" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Launch')]'.</msg>
+<arg>${LAUNCH_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.565212" elapsed="0.033123"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.564253" elapsed="0.034408"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.562735" elapsed="0.036670"/>
+</test>
+<test id="s1-s1-t10" name="Verify Why Teams Section Visible" line="34">
+<kw name="Scroll Down" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:13.604955" level="INFO">Executing JavaScript:
+window.scrollBy(0,800)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.603092" elapsed="0.019870"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:14.624842" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:13.623607" elapsed="1.001542"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.602245" elapsed="1.023150"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:14.666076" level="INFO">Current page contains text 'Why Teams Choose'.</msg>
+<arg>Why Teams Choose</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-09T01:04:14.626288" elapsed="0.040072"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:13.600850" elapsed="1.066382"/>
+</test>
+<test id="s1-s1-t11" name="Verify Smart Test Management Card" line="38">
+<kw name="Scroll Down" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:14.673461" level="INFO">Executing JavaScript:
+window.scrollBy(0,800)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:14.672018" elapsed="0.014615"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:15.688271" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:14.687306" elapsed="1.001475"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:14.670785" elapsed="1.018623"/>
+</kw>
+<kw name="Scroll Down" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:15.693796" level="INFO">Executing JavaScript:
+window.scrollBy(0,800)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:15.692395" elapsed="0.029546"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:16.723428" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:15.722788" elapsed="1.001006"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:15.690985" elapsed="1.033221"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:16.823791" level="INFO">Current page contains text 'Smart Test Management'.</msg>
+<arg>Smart Test Management</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-09T01:04:16.725373" elapsed="0.099028"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:14.668738" elapsed="2.157651"/>
+</test>
+<test id="s1-s1-t12" name="Verify Advanced Bug Tracking Card" line="43">
+<kw name="Scroll Down" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:16.834160" level="INFO">Executing JavaScript:
+window.scrollBy(0,800)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:16.832541" elapsed="0.034899"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:17.870342" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:16.868721" elapsed="1.002158"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:16.831369" elapsed="1.040188"/>
+</kw>
+<kw name="Scroll Down" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:17.876642" level="INFO">Executing JavaScript:
+window.scrollBy(0,800)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:17.874933" elapsed="0.028768"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:18.906405" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:17.904707" elapsed="1.002112"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:17.873633" elapsed="1.033615"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:18.992731" level="INFO">Current page contains text 'Advanced Bug Tracking'.</msg>
+<arg>Advanced Bug Tracking</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-09T01:04:18.908514" elapsed="0.084602"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:16.829427" elapsed="2.165024"/>
+</test>
+<test id="s1-s1-t13" name="Verify Predictive Analytics Card" line="48">
+<kw name="Scroll Down" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:19.006187" level="INFO">Executing JavaScript:
+window.scrollBy(0,800)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:19.003604" elapsed="0.045205"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:20.054205" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:19.051278" elapsed="1.003543"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:19.000612" elapsed="1.054854"/>
+</kw>
+<kw name="Scroll Down" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:20.061706" level="INFO">Executing JavaScript:
+window.scrollBy(0,800)
+Without any arguments.</msg>
+<arg>window.scrollBy(0,800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:20.058961" elapsed="0.035424"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:21.099007" level="INFO">Slept 1 second.</msg>
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:20.095900" elapsed="1.003546"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:20.057447" elapsed="1.042479"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:21.146525" level="INFO">Current page contains text 'Predictive Analytics'.</msg>
+<arg>Predictive Analytics</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-09T01:04:21.100669" elapsed="0.046130"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:18.996895" elapsed="2.150660"/>
+</test>
+<test id="s1-s1-t14" name="Verify AI Powered Solutions Section" line="53">
+<kw name="Scroll To Bottom" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:21.152728" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:21.151744" elapsed="0.014528"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:23.168843" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:21.167408" elapsed="2.002312"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:21.151180" elapsed="2.019431"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:23.271490" level="INFO">Current page contains text 'AI-POWERED SOLUTIONS'.</msg>
+<arg>AI-POWERED SOLUTIONS</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-09T01:04:23.172637" elapsed="0.099327"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:21.149806" elapsed="2.123920"/>
+</test>
+<test id="s1-s1-t15" name="Verify Sign In Link At Bottom" line="57">
+<kw name="Scroll To Bottom" owner="ui_keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:23.282142" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-03-09T01:04:23.279715" elapsed="0.037820"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-09T01:04:25.321889" level="INFO">Slept 2 seconds.</msg>
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-09T01:04:23.319283" elapsed="2.002924"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:23.278713" elapsed="2.043784"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-03-09T01:04:25.426029" level="INFO">Current page contains text 'Sign In'.</msg>
+<arg>Sign In</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-03-09T01:04:25.323528" elapsed="0.102740"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:04:23.276880" elapsed="2.150059"/>
+</test>
+<kw name="Close Website" owner="ui_keywords" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-03-09T00:17:34.268055" elapsed="2.425242"/>
+<status status="PASS" start="2026-03-09T01:04:25.431962" elapsed="3.026969"/>
 </kw>
-<status status="PASS" start="2026-03-09T00:17:34.266822" elapsed="2.426922"/>
+<status status="PASS" start="2026-03-09T01:04:25.431025" elapsed="3.028330"/>
 </kw>
-<status status="PASS" start="2026-03-09T00:17:25.896864" elapsed="10.798092"/>
-</test>
-<status status="PASS" start="2026-03-09T00:17:25.421276" elapsed="11.276725"/>
+<status status="PASS" start="2026-03-09T01:04:04.253440" elapsed="24.206099"/>
 </suite>
-<status status="PASS" start="2026-03-09T00:17:25.366830" elapsed="11.335044"/>
+<status status="PASS" start="2026-03-09T01:04:04.184544" elapsed="24.279311"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="15" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Ui" id="s1" pass="1" fail="0" skip="0">Ui</stat>
-<stat name="Landing" id="s1-s1" pass="1" fail="0" skip="0">Ui.Landing</stat>
+<stat name="Ui" id="s1" pass="15" fail="0" skip="0">Ui</stat>
+<stat name="Landing" id="s1-s1" pass="15" fail="0" skip="0">Ui.Landing</stat>
 </suite>
 </statistics>
 <errors>
