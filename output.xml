@@ -1,362 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2026-03-09T01:04:04.182290" rpa="false" schemaversion="5">
-<suite id="s1" name="Ui" source="C:\Users\Jackie\robot-framework-exam\tests\ui">
-<suite id="s1-s1" name="Landing" source="C:\Users\Jackie\robot-framework-exam\tests\ui\landing.robot">
-<kw name="Open Website" owner="ui_keywords" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:04.871859" level="INFO">Opening browser 'chrome' to base url 'https://kiwamitestcloud.com/'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-03-09T01:04:04.871209" elapsed="3.155253"/>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2026-03-09T01:27:42.933503" rpa="false" schemaversion="5">
+<suite id="s1" name="Api" source="C:\Users\Jackie\robot-framework-exam\tests\api">
+<suite id="s1-s1" name="Smoking Zone" source="C:\Users\Jackie\robot-framework-exam\tests\api\smoking_zone.robot">
+<test id="s1-s1-t1" name="Add Smoking Zone" line="10">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-03-09T01:27:43.181006" level="INFO">Creating Session using : alias=api, url=https://jewapropertypro.com/infinity/jewaapp/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-03-09T01:27:43.180764" elapsed="0.000464"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-03-09T01:04:08.027550" elapsed="0.049772"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-09T01:27:43.181941" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-09T01:27:43.181567" elapsed="0.000410"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:13.078937" level="INFO">Slept 5 seconds.</msg>
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:08.078077" elapsed="5.001289"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-09T01:27:43.182481" level="INFO">&amp;{body} = { name=Robot Test Zone | status=Active }</msg>
+<var>&amp;{body}</var>
+<arg>name=Robot Test Zone</arg>
+<arg>status=Active</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-09T01:27:43.182258" elapsed="0.000256"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:04.869669" elapsed="8.210169"/>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-03-09T01:27:44.317294" level="INFO">POST Request : url=https://jewapropertypro.com/infinity/jewaapp/api/addsmokingzone 
+ path_url=/infinity/jewaapp/api/addsmokingzone 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '47'} 
+ body=b'{"name": "Robot Test Zone", "status": "Active"}' 
+ </msg>
+<msg time="2026-03-09T01:27:44.317503" level="INFO">POST Response : url=https://jewapropertypro.com/infinity/jewaapp/api/addsmokingzone 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '59', 'access-control-allow-origin': '*', 'transfer-encoding': 'chunked', 'content-encoding': 'gzip', 'vary': 'Accept-Encoding', 'date': 'Sun, 08 Mar 2026 22:27:42 GMT', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"message":"Smoking zone has been added","results":{"message":[{"id":1239,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":"Active","created_at":"2026-03-09 01:27:00","updated_at":null},{"id":1238,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:59:00","updated_at":null},{"id":1236,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:58:00","updated_at":null},{"id":1237,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:58:00","updated_at":null},{"id":1235,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:57:00","updated_at":null},{"id":1234,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:56:00","updated_at":null},{"id":1233,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:46:00","updated_at":null},{"id":1232,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:10:00","updated_at":null},{"id":1231,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:09:00","updated_at":null},{"id":1230,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:08:00","updated_at":null},{"id":1229,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:06:00","updated_at":null},{"id":1228,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 18:56:00","updated_at":null},{"id":1227,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 17:54:00","updated_at":null},{"id":1226,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 17:52:00","updated_at":null},{"id":1225,"addedby":"2","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-09 18:33:00","updated_at":null},{"id":1224,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-09 17:52:00","updated_at":null},{"id":1223,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-08 00:01:00","updated_at":null},{"id":1222,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-07 18:03:00","updated_at":null},{"id":1221,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-07 00:05:00","updated_at":null},{"id":1220,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-07 00:02:00","updated_at":null},{"id":1219,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-06 18:00:00","updated_at":null},{"id":1218,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-06 00:03:00","updated_at":null},{"id":1217,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-06 00:01:00","updated_at":null},{"id":1216,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-05 20:00:00","updated_at":null},{"id":1215,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-05 18:03:00","updated_at":null},{"id":1214,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-05 00:06:00","updated_at":null},{"id":1213,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-05 00:01:00","updated_at":null},{"id":1212,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 20:01:00","updated_at":null},{"id":1211,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 19:17:00","updated_at":null},{"id":1210,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 19:16:00","updated_at":null},{"id":1209,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 18:03:00","updated_at":null},{"id":1208,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 17:40:00","updated_at":null},{"id":1198,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1199,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1200,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1201,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1202,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1203,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1204,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1205,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1206,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1207,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1197,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-12-19 13:40:00","updated_at":null},{"id":1137,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1138,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1139,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1140,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1141,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1142,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1143,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1144,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2026-03-09T01:27:44.317727" level="INFO">C:\Users\Jackie\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jewapropertypro.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-03-09T01:27:44.318148" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/addsmokingzone</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-03-09T01:27:43.182778" elapsed="1.135420"/>
 </kw>
-<test id="s1-s1-t1" name="Verify Logo Visible" line="7">
-<kw name="Verify Logo Visible" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.168763" level="INFO">Current page contains element 'xpath=//img'.</msg>
-<arg>${LOGO}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.085294" elapsed="0.084026"/>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-03-09T01:27:44.318584" elapsed="0.000346"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:13.083867" elapsed="0.086186"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Add Smoking Zone Response: ${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-09T01:27:44.319269" elapsed="0.034736"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:13.080247" elapsed="0.091212"/>
+<status status="PASS" start="2026-03-09T01:27:43.179756" elapsed="1.174673"/>
 </test>
-<test id="s1-s1-t2" name="Verify Products Menu Visible" line="10">
-<kw name="Verify Products Menu" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.244241" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Products')]'.</msg>
-<arg>${PRODUCTS_MENU}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.177605" elapsed="0.067199"/>
+<test id="s1-s1-t2" name="Get Smoking Zone" line="18">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-03-09T01:27:44.355795" level="INFO">Creating Session using : alias=api, url=https://jewapropertypro.com/infinity/jewaapp/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-03-09T01:27:44.355599" elapsed="0.000399"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:13.176410" elapsed="0.069121"/>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-03-09T01:27:45.300950" level="INFO">POST Request : url=https://jewapropertypro.com/infinity/jewaapp/api/getsmokingzone 
+ path_url=/infinity/jewaapp/api/getsmokingzone 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2026-03-09T01:27:45.301147" level="INFO">POST Response : url=https://jewapropertypro.com/infinity/jewaapp/api/getsmokingzone 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '58', 'access-control-allow-origin': '*', 'transfer-encoding': 'chunked', 'content-encoding': 'gzip', 'vary': 'Accept-Encoding', 'date': 'Sun, 08 Mar 2026 22:27:43 GMT', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"message":[{"id":1239,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":"Active","created_at":"2026-03-09 01:27:00","updated_at":null},{"id":1238,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:59:00","updated_at":null},{"id":1236,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:58:00","updated_at":null},{"id":1237,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:58:00","updated_at":null},{"id":1235,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:57:00","updated_at":null},{"id":1234,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-17 13:56:00","updated_at":null},{"id":1233,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:46:00","updated_at":null},{"id":1232,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:10:00","updated_at":null},{"id":1231,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:09:00","updated_at":null},{"id":1230,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:08:00","updated_at":null},{"id":1229,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 19:06:00","updated_at":null},{"id":1228,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 18:56:00","updated_at":null},{"id":1227,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 17:54:00","updated_at":null},{"id":1226,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-16 17:52:00","updated_at":null},{"id":1225,"addedby":"2","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-09 18:33:00","updated_at":null},{"id":1224,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-09 17:52:00","updated_at":null},{"id":1223,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-08 00:01:00","updated_at":null},{"id":1222,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-07 18:03:00","updated_at":null},{"id":1221,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-07 00:05:00","updated_at":null},{"id":1220,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-07 00:02:00","updated_at":null},{"id":1219,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-06 18:00:00","updated_at":null},{"id":1218,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-06 00:03:00","updated_at":null},{"id":1217,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-06 00:01:00","updated_at":null},{"id":1216,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-05 20:00:00","updated_at":null},{"id":1215,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-05 18:03:00","updated_at":null},{"id":1214,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-05 00:06:00","updated_at":null},{"id":1213,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-05 00:01:00","updated_at":null},{"id":1212,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 20:01:00","updated_at":null},{"id":1211,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 19:17:00","updated_at":null},{"id":1210,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 19:16:00","updated_at":null},{"id":1209,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 18:03:00","updated_at":null},{"id":1208,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2026-02-04 17:40:00","updated_at":null},{"id":1198,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1199,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1200,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1201,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1202,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1203,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1204,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1205,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1206,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1207,"addedby":null,"addedbyname":null,"latitude":null,"longitude":null,"alias":null,"radius":null,"status":null,"created_at":"2025-12-22 07:45:00","updated_at":null},{"id":1197,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-12-19 13:40:00","updated_at":null},{"id":1137,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1138,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1139,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1140,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1141,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1142,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1143,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1144,"addedby":"1","addedbyname":"fullname","latitude":"latitude","longitude":"longitude","alias":"alias","radius":"alias","status":"status","created_at":"2025-11-25 15:40:00","updated_at":null},{"id":1145,"addedby":"1","addedbyname":"f... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2026-03-09T01:27:45.301328" level="INFO">C:\Users\Jackie\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jewapropertypro.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-03-09T01:27:45.301693" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/getsmokingzone</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-03-09T01:27:44.356281" elapsed="0.945454"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:13.173733" elapsed="0.075062"/>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-03-09T01:27:45.302058" elapsed="0.000251"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Get Smoking Zone Response: ${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-09T01:27:45.302541" elapsed="0.027831"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:27:44.355140" elapsed="0.975593"/>
 </test>
-<test id="s1-s1-t3" name="Verify Solutions Menu Visible" line="13">
-<kw name="Verify Solutions Menu" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.328091" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Solutions')]'.</msg>
-<arg>${SOLUTIONS_MENU}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.259017" elapsed="0.069512"/>
+<test id="s1-s1-t3" name="Update Smoking Zone" line="24">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-03-09T01:27:45.332252" level="INFO">Creating Session using : alias=api, url=https://jewapropertypro.com/infinity/jewaapp/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-03-09T01:27:45.332076" elapsed="0.000332"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:13.256929" elapsed="0.072021"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-09T01:27:45.332916" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-09T01:27:45.332685" elapsed="0.000263"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:13.252642" elapsed="0.077790"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-09T01:27:45.333631" level="INFO">&amp;{body} = { id=1 | status=Inactive }</msg>
+<var>&amp;{body}</var>
+<arg>id=1</arg>
+<arg>status=Inactive</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-09T01:27:45.333248" elapsed="0.000449"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-03-09T01:27:46.280564" level="INFO">POST Request : url=https://jewapropertypro.com/infinity/jewaapp/api/updatesmokingzone 
+ path_url=/infinity/jewaapp/api/updatesmokingzone 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '33'} 
+ body=b'{"id": "1", "status": "Inactive"}' 
+ </msg>
+<msg time="2026-03-09T01:27:46.280829" level="INFO">POST Response : url=https://jewapropertypro.com/infinity/jewaapp/api/updatesmokingzone 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '57', 'access-control-allow-origin': '*', 'content-length': '76', 'content-encoding': 'gzip', 'vary': 'Accept-Encoding', 'date': 'Sun, 08 Mar 2026 22:27:44 GMT', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"message":"Smoking zone has been updated","status":200} 
+ </msg>
+<msg time="2026-03-09T01:27:46.281028" level="INFO">C:\Users\Jackie\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jewapropertypro.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-03-09T01:27:46.281926" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/updatesmokingzone</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-03-09T01:27:45.334089" elapsed="0.947961"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-03-09T01:27:46.282895" elapsed="0.000642"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Update Response: ${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-09T01:27:46.284385" elapsed="0.002027"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:27:45.331486" elapsed="0.955769"/>
 </test>
-<test id="s1-s1-t4" name="Verify Why Us Menu Visible" line="16">
-<kw name="Verify WhyUs Menu" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.383755" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Why')]'.</msg>
-<arg>${WHYUS_MENU}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.339952" elapsed="0.044020"/>
+<test id="s1-s1-t4" name="Delete Smoking Zone" line="32">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-03-09T01:27:46.292218" level="INFO">Creating Session using : alias=api, url=https://jewapropertypro.com/infinity/jewaapp/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-03-09T01:27:46.291604" elapsed="0.001188"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:13.337447" elapsed="0.046788"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-09T01:27:46.293503" level="INFO">&amp;{headers} = { Content-Type=application/json }</msg>
+<var>&amp;{headers}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-09T01:27:46.293227" elapsed="0.000311"/>
 </kw>
-<status status="PASS" start="2026-03-09T01:04:13.334291" elapsed="0.050744"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-03-09T01:27:46.294045" level="INFO">&amp;{body} = { id=1 }</msg>
+<var>&amp;{body}</var>
+<arg>id=1</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-03-09T01:27:46.293811" elapsed="0.000280"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-03-09T01:27:47.262581" level="INFO">POST Request : url=https://jewapropertypro.com/infinity/jewaapp/api/deletesmokingzone 
+ path_url=/infinity/jewaapp/api/deletesmokingzone 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '11'} 
+ body=b'{"id": "1"}' 
+ </msg>
+<msg time="2026-03-09T01:27:47.262877" level="INFO">POST Response : url=https://jewapropertypro.com/infinity/jewaapp/api/deletesmokingzone 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '56', 'access-control-allow-origin': '*', 'content-length': '77', 'content-encoding': 'gzip', 'vary': 'Accept-Encoding', 'date': 'Sun, 08 Mar 2026 22:27:45 GMT', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"message":"Smoking zone  has been deleted","status":200} 
+ </msg>
+<msg time="2026-03-09T01:27:47.263103" level="INFO">C:\Users\Jackie\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'jewapropertypro.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2026-03-09T01:27:47.264095" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/deletesmokingzone</arg>
+<arg>json=${body}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-03-09T01:27:46.294486" elapsed="0.969753"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-03-09T01:27:47.265204" elapsed="0.000749"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Delete Response: ${response.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-09T01:27:47.266780" elapsed="0.002106"/>
+</kw>
+<status status="PASS" start="2026-03-09T01:27:46.289873" elapsed="0.980041"/>
 </test>
-<test id="s1-s1-t5" name="Verify Platform Menu Visible" line="19">
-<kw name="Verify Platform Menu" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.445565" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Platform')]'.</msg>
-<arg>${PLATFORM_MENU}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.394207" elapsed="0.051557"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.392901" elapsed="0.053083"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.389086" elapsed="0.057570"/>
-</test>
-<test id="s1-s1-t6" name="Verify Contact Menu Visible" line="22">
-<kw name="Verify Contact Menu" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.481355" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Contact')]'.</msg>
-<arg>${CONTACT_MENU}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.449643" elapsed="0.032035"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.449073" elapsed="0.032929"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.447957" elapsed="0.034822"/>
-</test>
-<test id="s1-s1-t7" name="Verify Sign In Button Visible" line="25">
-<kw name="Verify SignIn Button" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.518524" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Sign')]'.</msg>
-<arg>${SIGNIN_BUTTON}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.486190" elapsed="0.032538"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.485372" elapsed="0.033580"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.484318" elapsed="0.035324"/>
-</test>
-<test id="s1-s1-t8" name="Verify Get Started Button Visible" line="28">
-<kw name="Verify Get Started Button" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.560214" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Get Started')]'.</msg>
-<arg>${GET_STARTED}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.526487" elapsed="0.033931"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.525829" elapsed="0.034844"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.523986" elapsed="0.037369"/>
-</test>
-<test id="s1-s1-t9" name="Verify Launch Button Visible" line="31">
-<kw name="Verify Launch Button" owner="ui_keywords">
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.597898" level="INFO">Current page contains element 'xpath=//*[contains(text(),'Launch')]'.</msg>
-<arg>${LAUNCH_BUTTON}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.565212" elapsed="0.033123"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.564253" elapsed="0.034408"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.562735" elapsed="0.036670"/>
-</test>
-<test id="s1-s1-t10" name="Verify Why Teams Section Visible" line="34">
-<kw name="Scroll Down" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:13.604955" level="INFO">Executing JavaScript:
-window.scrollBy(0,800)
-Without any arguments.</msg>
-<arg>window.scrollBy(0,800)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.603092" elapsed="0.019870"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:14.624842" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:13.623607" elapsed="1.001542"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.602245" elapsed="1.023150"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:14.666076" level="INFO">Current page contains text 'Why Teams Choose'.</msg>
-<arg>Why Teams Choose</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-03-09T01:04:14.626288" elapsed="0.040072"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:13.600850" elapsed="1.066382"/>
-</test>
-<test id="s1-s1-t11" name="Verify Smart Test Management Card" line="38">
-<kw name="Scroll Down" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:14.673461" level="INFO">Executing JavaScript:
-window.scrollBy(0,800)
-Without any arguments.</msg>
-<arg>window.scrollBy(0,800)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:14.672018" elapsed="0.014615"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:15.688271" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:14.687306" elapsed="1.001475"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:14.670785" elapsed="1.018623"/>
-</kw>
-<kw name="Scroll Down" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:15.693796" level="INFO">Executing JavaScript:
-window.scrollBy(0,800)
-Without any arguments.</msg>
-<arg>window.scrollBy(0,800)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:15.692395" elapsed="0.029546"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:16.723428" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:15.722788" elapsed="1.001006"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:15.690985" elapsed="1.033221"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:16.823791" level="INFO">Current page contains text 'Smart Test Management'.</msg>
-<arg>Smart Test Management</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-03-09T01:04:16.725373" elapsed="0.099028"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:14.668738" elapsed="2.157651"/>
-</test>
-<test id="s1-s1-t12" name="Verify Advanced Bug Tracking Card" line="43">
-<kw name="Scroll Down" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:16.834160" level="INFO">Executing JavaScript:
-window.scrollBy(0,800)
-Without any arguments.</msg>
-<arg>window.scrollBy(0,800)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:16.832541" elapsed="0.034899"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:17.870342" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:16.868721" elapsed="1.002158"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:16.831369" elapsed="1.040188"/>
-</kw>
-<kw name="Scroll Down" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:17.876642" level="INFO">Executing JavaScript:
-window.scrollBy(0,800)
-Without any arguments.</msg>
-<arg>window.scrollBy(0,800)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:17.874933" elapsed="0.028768"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:18.906405" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:17.904707" elapsed="1.002112"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:17.873633" elapsed="1.033615"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:18.992731" level="INFO">Current page contains text 'Advanced Bug Tracking'.</msg>
-<arg>Advanced Bug Tracking</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-03-09T01:04:18.908514" elapsed="0.084602"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:16.829427" elapsed="2.165024"/>
-</test>
-<test id="s1-s1-t13" name="Verify Predictive Analytics Card" line="48">
-<kw name="Scroll Down" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:19.006187" level="INFO">Executing JavaScript:
-window.scrollBy(0,800)
-Without any arguments.</msg>
-<arg>window.scrollBy(0,800)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:19.003604" elapsed="0.045205"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:20.054205" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:19.051278" elapsed="1.003543"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:19.000612" elapsed="1.054854"/>
-</kw>
-<kw name="Scroll Down" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:20.061706" level="INFO">Executing JavaScript:
-window.scrollBy(0,800)
-Without any arguments.</msg>
-<arg>window.scrollBy(0,800)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:20.058961" elapsed="0.035424"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:21.099007" level="INFO">Slept 1 second.</msg>
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:20.095900" elapsed="1.003546"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:20.057447" elapsed="1.042479"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:21.146525" level="INFO">Current page contains text 'Predictive Analytics'.</msg>
-<arg>Predictive Analytics</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-03-09T01:04:21.100669" elapsed="0.046130"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:18.996895" elapsed="2.150660"/>
-</test>
-<test id="s1-s1-t14" name="Verify AI Powered Solutions Section" line="53">
-<kw name="Scroll To Bottom" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:21.152728" level="INFO">Executing JavaScript:
-window.scrollTo(0, document.body.scrollHeight)
-Without any arguments.</msg>
-<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:21.151744" elapsed="0.014528"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:23.168843" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:21.167408" elapsed="2.002312"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:21.151180" elapsed="2.019431"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:23.271490" level="INFO">Current page contains text 'AI-POWERED SOLUTIONS'.</msg>
-<arg>AI-POWERED SOLUTIONS</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-03-09T01:04:23.172637" elapsed="0.099327"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:21.149806" elapsed="2.123920"/>
-</test>
-<test id="s1-s1-t15" name="Verify Sign In Link At Bottom" line="57">
-<kw name="Scroll To Bottom" owner="ui_keywords">
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:23.282142" level="INFO">Executing JavaScript:
-window.scrollTo(0, document.body.scrollHeight)
-Without any arguments.</msg>
-<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-03-09T01:04:23.279715" elapsed="0.037820"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-03-09T01:04:25.321889" level="INFO">Slept 2 seconds.</msg>
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-03-09T01:04:23.319283" elapsed="2.002924"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:23.278713" elapsed="2.043784"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2026-03-09T01:04:25.426029" level="INFO">Current page contains text 'Sign In'.</msg>
-<arg>Sign In</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2026-03-09T01:04:25.323528" elapsed="0.102740"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:23.276880" elapsed="2.150059"/>
-</test>
-<kw name="Close Website" owner="ui_keywords" type="TEARDOWN">
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-03-09T01:04:25.431962" elapsed="3.026969"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:25.431025" elapsed="3.028330"/>
-</kw>
-<status status="PASS" start="2026-03-09T01:04:04.253440" elapsed="24.206099"/>
+<status status="PASS" start="2026-03-09T01:27:42.970091" elapsed="4.302976"/>
 </suite>
-<status status="PASS" start="2026-03-09T01:04:04.184544" elapsed="24.279311"/>
+<status status="PASS" start="2026-03-09T01:27:42.935506" elapsed="4.340103"/>
 </suite>
 <statistics>
 <total>
-<stat pass="15" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Ui" id="s1" pass="15" fail="0" skip="0">Ui</stat>
-<stat name="Landing" id="s1-s1" pass="15" fail="0" skip="0">Ui.Landing</stat>
+<stat name="Api" id="s1" pass="4" fail="0" skip="0">Api</stat>
+<stat name="Smoking Zone" id="s1-s1" pass="4" fail="0" skip="0">Api.Smoking Zone</stat>
 </suite>
 </statistics>
 <errors>
