@@ -10,8 +10,6 @@ This project demonstrates automation testing using **Robot Framework** for:
 
 The project follows a clean automation framework structure with reusable keywords, separated test data, and proper folder organization.
 
----
-
 ## Project Structure
 
 robot-framework-exam
@@ -31,7 +29,6 @@ robot-framework-exam
 ├── requirements.txt
 └── README.md
 
----
 
 ## Libraries Used
 
@@ -40,7 +37,6 @@ robot-framework-exam
 - RequestsLibrary
 - AppiumLibrary
 
----
 
 ## Installation
 
@@ -56,7 +52,7 @@ Install Appium driver:
 
 appium driver install uiautomator2
 
----
+
 
 ## Running Tests
 
@@ -72,7 +68,6 @@ Run Mobile tests:
 
 robot -d reports tests/mobile
 
----
 
 ## Reports
 
@@ -84,7 +79,7 @@ After running tests, Robot Framework generates:
 
 These files are stored in the **reports** folder.
 
----
+
 
 ## Mobile Automation
 
@@ -99,3 +94,4 @@ Test scenarios include:
 - Login
 - Forgot Password
 - Home screen verification
+
